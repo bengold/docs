@@ -1,3 +1,177 @@
 ---
-title: "Reference"
+title: "API Reference"
+description: "A list of all functions and attributes available on the framer Plugin API."
+sidebarTitle: "Reference"
 ---
+
+## Navigation API
+
+Use the Navigation API to programmatically navigate the UI to a canvas node, a CMS collection item, or a code file. Plugins can optionally select targets, zoom to canvas layers, or focus a specific field in the item editor.
+
+## Plugin UI
+
+A set of functions for opening and closing the Plugin itself, along with options setting a specific size for your Plugin. Plugins are able to run completely UI-less if desired.
+
+## User APIs
+
+### User
+
+## Code File API
+
+### CodeFile
+
+### CodeFileExport
+
+### CodeFileVersion
+
+## Canvas APIs
+
+### Drag & Drop
+
+### Traits
+
+## CMS APIs
+
+### Collection
+
+### CollectionItem
+
+### EnumCase
+
+### EnumField
+
+### ManagedCollection
+
+## Localization API
+
+### Locale
+
+### LocalizationGroup
+
+### LocalizationSource
+
+### LocalizationValue
+
+## Settings APIs
+
+### Redirect
+
+## Permissions
+
+## Modes
+
+## Project
+
+## Selection
+
+## Assets
+
+## Components
+
+## Text
+
+## Custom Code
+
+## Storing Data
+
+## Styles
+
+## Fonts
+
+Plugins can use typefaces available in the Font Picker to get information about specific fonts or to apply them to [Text Styles](/plugins/guides/styles).
+
+`getFont(family)`
+
+`getFonts()`
+
+Unlike the Font Picker, which groups fonts by typeface, `getFonts` will list individual fonts for each weight and style. You can think these as separate font files.
+
+```javascript
+await framer.getFonts()
+
+[
+  //..
+  {
+    family: "Inter",
+    weight: 900,
+    style: "normal"
+  },
+  {
+    family: "Noto Sans",
+    weight: 400,
+    style: "normal"
+  },
+  //..
+]
+```
+
+To get a specific font from a family, use `getFont` and pass in the family name. This is **not** case sensitive. By default, this will return a font in the family that has a normal weight and style.
+
+```javascript
+// Get Noto Sans with a weight of 400 in a normal style.
+const font = await framer.getFont("Noto Sans")
+
+// Get Noto Sans with a weight of 800 in an italic style.
+const font = await framer.getFont("Noto Sans", {
+  weight: 800,
+  style: "italic"
+})
+```
+
+Make sure to check that a font exists before using it. If a font does not exist, `getFont` will return `null`.
+
+<Info>
+  **Note:** Custom Fonts are not available to Plugins
+</Info>
+
+## Editor
+
+Functions for common actions in the Framer Editor, like going to a specific node on the canvas, or displaying a message in a toast.
+
+`zoomIntoView(nodeId)`
+
+`notify(message, options?: NotifyOptions)`
+
+You can automatically adjust the viewport's pan and zoom so that a node appears in the center. This is the equivalent to using **Zoom to Selection** in the UI, except you can use any list of Nodes.
+
+```typescript
+// Scroll and zoom the viewport to show a specific node.
+await framer.zoomIntoView("node-id")
+
+// Scroll and zoom to fit multiple nodes into the viewport.
+await framer.zoomIntoView(["node-id-1", "node-id-2"])
+```
+
+## Nodes
+
+Low-level API for working with Nodes. Useful for doing very specific tasks that may not be covered by the higher-level APIs. Learn more in our [working with Nodes guide](/plugins/guides/nodes).
+
+`createFrameNode(attributes)`
+
+`cloneNode(nodeId)`
+
+`removeNode(nodeId)`
+
+`getCanvasRoot()`
+
+`subscribeToCanvasRoot(callback)`
+
+`getNode(nodeId)`
+
+`getParent(nodeId)`
+
+`getChildren(nodeId)`
+
+`getRect(nodeId)`
+
+`setAttributes(nodeId, attributes)`
+
+`setParent(nodeId, parentId)`
+
+`getNodesWithType(type)`
+
+`getNodesWithAttribute(attribute)`
+
+`getNodesWithAttributeSet(attribute)`
+
+`node.navigateTo(opts)`
