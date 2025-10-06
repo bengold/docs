@@ -8,8 +8,51 @@ title: "Changelog"
   ## Navigation API
 
   `framer.navigateTo(nodeId, opts?)` — Programmatically navigate to canvas nodes, collection items, or code files. Supports optional selection, zoom constraints, and field-level scrolling for collection items. Also available in class instances such as `node.navigateTo()`, `collectionItem.navigateTo()`, and `codeFile.navigateTo()`.
+
+  ## Code File API
+
+  `framer.subscribeToOpenCodeFile(cb)` — Subscribe to the currently open code file, enabling plugins to react when users switch between files.
+
+  ## Design Pages API
+
+  Plugins can now read, create, and edit nodes in Design Pages using the same Nodes and Selection APIs you use elsewhere.
+
+  - Works with the existing selection and node methods (for example, `framer.getSelection()` and Node operations)
+  - Insert and modify frames, text, and images on Design Pages, just like on other pages
+  - Ideal for plugins that generate explorations, moodboards, or asset grids inside a freeform canvas
+
+  Learn more about Design Pages: [Design Pages update](https://www.framer.com/updates/design-pages)
 </Update>
 
-<Update label="10/06/2025" description="">
-  
+<Update label="v3.6.0" description=" Aug 21, 2025">
+  This release brings new traits to the Canvas API and plugin development workflow.
+
+  ### Added: Layout Traits
+
+  - Added support for layout traits, including stack, grid, padding, and gap.
+  - Added support for border traits on FrameNode.
+  - Added support for variant traits on FrameNode.
+
+  ### Added: Code Mode
+
+  - Added a new `code` mode, allowing to open a Plugin in the Code Editor.
+</Update>
+
+<Update label="v3.5.2" description=" Jul 25, 2025">
+  This new release introduces brand new APIs for creating menus for your plugin.
+
+  ### Added: Menu APIs
+
+  We are introducing new APIs for creating two different types of menu:
+
+  - `setMenu` lets you add a global menu to the plugin window header.
+  - `showContextMenu` allows creating context menus anywhere in your plugin.
+
+  ### Added: User APIs
+
+  - New User properties: `avatarUrl` and `initials`
+
+  ### Improved
+
+  - `closePlugin` now returns `never` instead of `Promise<void>`. That means you can treat it like a `throw`, the code that follows will not be reached. Internally `closePlugin` throws `FramerPluginClosedError`, so make sure to ignore it in your exception handlers. `framer-plugin` stops propagation of unhandled errors and rejections of this class, so you don't need to.
 </Update>
