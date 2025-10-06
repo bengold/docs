@@ -4,6 +4,27 @@ description: "A list of all functions and attributes available on the framer Plu
 sidebarTitle: "Reference"
 ---
 
+export const LinkableField = ({ name, id, href, children }) => {
+  return (
+    <div class="field pt-2.5 pb-5 my-2.5 border-gray-50 dark:border-gray-800/50 border-b">
+      <div class="flex font-mono text-sm group/param-head param-head break-all relative">
+        <div class="flex-1 flex content-start py-0.5 mr-5">
+          <div class="flex items-center flex-wrap gap-2">
+            <a href={href} class="border-0 group-hover/param-head:opacity-80 focus:opacity-80 focus:outline-0 group/link">
+            <div class="font-semibold text-primary dark:text-primary-light cursor-pointer overflow-wrap-anywhere" data-component-part="field-name">
+                {name}
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 prose-sm prose-gray dark:prose-invert [&amp;_.prose&gt;p:first-child]:mt-0 [&amp;_.prose&gt;p:last-child]:mb-0" data-component-part="field-content">
+            <span data-as="p">{children}</span>
+      </div>
+    </div>
+  );
+};
+
 ## Navigation API
 
 Use the Navigation API to programmatically navigate the UI to a canvas node, a CMS collection item, or a code file. Plugins can optionally select targets, zoom to canvas layers, or focus a specific field in the item editor.
@@ -60,17 +81,15 @@ A set of functions for opening and closing the Plugin itself, along with options
 
 Plugins can do only what the user can. These APIs let you find out if the methods you need are available to the user, and potentially disable certain functions of your Plugin if not. Learn more with the [Permission guide](/plugins/guides/permissions).
 
-<ParamField header="isAllowedTo()">
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
   Find out if user's permissions allow them to execute methods.
-</ParamField>
-
-<ParamField header="subscribeToIsAllowedTo()">
+</LinkableField>
+<LinkableField name="subscribeToIsAllowedTo()" href="/reference/subscribe-to-is-allowed-to">
   Subscribe to changes in whether the user is allowed to execute methods.
-</ParamField>
-
-<ParamField header="useIsAllowedTo()">
+</LinkableField>
+<LinkableField name="useIsAllowedTo()" href="/reference/use-is-allowed-to">
   Find out if user's permissions allow them to execute methods, in hook form.
-</ParamField>
+</LinkableField>
 
 ## Modes
 
