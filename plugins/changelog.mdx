@@ -56,3 +56,38 @@ title: "Changelog"
 
   - `closePlugin` now returns `never` instead of `Promise<void>`. That means you can treat it like a `throw`, the code that follows will not be reached. Internally `closePlugin` throws `FramerPluginClosedError`, so make sure to ignore it in your exception handlers. `framer-plugin` stops propagation of unhandled errors and rejections of this class, so you don't need to.
 </Update>
+
+<Update label="v3.4.0" description="Jul 15, 2025">
+  This new release adds support for Gallery fields to CMS APIs, as well as introducing support for managing code components and overrides via the new Code File API.
+
+  ### Added: Code File API
+
+  We’ve added several new APIs to help plugin authors manage code files:
+
+  - `createCodeFile`, `getCodeFile`, and `getCodeFiles` for creating and retrieving code files
+  - `subscribeToCodeFiles` to receive notifications when code files are created or modified
+  - `codeFile.setFileContent`, `codeFile.rename`, and `codeFile.remove` to update, rename, and delete code files
+  - `codeFile.getVersions` to access a file’s version history
+
+  ### Added: Gallery Fields
+
+  It is now possible to create and update Gallery fields, as well as set values for them when adding or updating items. This is achieved by the creation of a new `"array"` field type.
+
+  - `ManagedCollection.setFields` and `Collection.addFields` support creating Gallery fields.
+  - `ManagedCollection.addItems` and `Collection.addItems` let you add values for Gallery fields.
+  - `CollectionItem.setAttributes` can now update Gallery field values.
+
+  See our updated CMS guide for more information on working with arrays.
+
+  ### Updated: Collection API
+
+  Deprecated Collection and Managed Collection `readonly` property in favor of `managedBy` and proper permission-based checks via the Permissions API
+
+  ### Updated: User API
+
+  User now has `avatarUrl` and `initials`, and is finally documented.
+
+  ### Fixed: Draggable Component
+
+  Fixed the `<Draggable>` component so that the `altText` parameter is correctly applied when dragging and dropping images, ensuring accessibility metadata isn’t lost.
+</Update>
