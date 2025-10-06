@@ -64,6 +64,10 @@ Plugins can do only what the user can. These APIs let you find out if the method
   Find out if user's permissions allow them to execute methods.
 </ParamField>
 
+<ParamField path="subscribeToIsAllowedTo()">
+Subscribe to changes in whether the user is allowed to execute methods.
+</ParamField>
+
 ## Modes
 
 A property with the current mode. Modes are used to understand the context in which the Plugin is being run, and adjust logic as needed. Learn more in the [mode guide](/plugins/guides/modes).
@@ -81,9 +85,7 @@ Information about the current Framer Project. Returns the display name of the Pr
 Functions for reading, setting, or listening to the current selection on the Canvas. The returned list can range from zero items to a very large list of items.
 
 `getSelection()`
-
 `setSelection(nodeIds)`
-
 `subscribeToSelection(callback)`
 
 ```typescript
@@ -93,7 +95,7 @@ useEffect(() => {
     return framer.subscribeToSelection(setSelection)
 }, [])
 
-console.log(`Selected ${selection.length} item(s)`) 
+console.log(`Selected ${selection.length} item(s)`)
 ```
 
 ## Assets
@@ -145,9 +147,9 @@ With Custom Code your plugin can install code snippets in a user's Website via `
 When setting Custom Code, you must provide the html string, as well as a `location`.
 
 ```javascript
-framer.setCustomCode({ 
+framer.setCustomCode({
   html: '<script src="https://example.com/script.js"></script>',
-  location: "bodyEnd" 
+  location: "bodyEnd"
 })
 ```
 
@@ -161,9 +163,9 @@ The `location` property has the following values:
 Setting the `html` value back to `null` clears the installed code snippet.
 
 ```javascript
-framer.setCustomCode({ 
+framer.setCustomCode({
   html: null,
-  location: "bodyEnd" 
+  location: "bodyEnd"
 })
 ```
 
