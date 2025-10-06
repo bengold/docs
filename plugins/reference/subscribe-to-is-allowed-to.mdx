@@ -1,3 +1,37 @@
 ---
 title: "subscribeToIsAllowedTo"
 ---
+
+Subscribe to changes in whether the user is allowed to execute methods.
+
+```javascript
+console.log(`Initial: ${framer.isAllowedTo("addText")}`)
+const unsub = framer.subscribeToIsAllowedTo("addText", (isAllowed) => {
+    console.log(`New: ${isAllowed}`)
+    unsub()
+})
+```
+
+### Signature
+
+```javascript
+subscribeToIsAllowedTo: (
+  ...args: [
+    ...methods: [ProtectedMethod, ...ProtectedMethod[]],
+    callback: (isAllowed: boolean) => void,
+  ]
+) => Unsubscribe;
+```
+
+### Parameters
+
+- `methods` – The methods to check, at least one.
+- `callback` – The function that's called every time `isAllowed` changes, where `isAllowed` is `true` if all of `methods` can be executed, and `false` otherwise.
+
+### Returns
+
+- `Unsubscribe` – The function to call to unsubscribe.
+
+### Notes
+
+Learn more with the [Permission guide](/plugins/guides/permissions).

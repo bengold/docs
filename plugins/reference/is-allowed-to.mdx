@@ -1,3 +1,29 @@
 ---
 title: "isAllowedTo"
 ---
+
+Find out if user's permissions allow them to execute methods.
+
+```javascript
+const isAllowed = framer.isAllowedTo("addText", "addImage")
+```
+
+### Signature
+
+```javascript
+isAllowedTo: (
+  ...methods: [ProtectedMethod, ...ProtectedMethod[]]
+) => boolean
+```
+
+### Parameters
+
+- `methods` – The methods to check, at least one.
+
+### Returns
+
+- `boolean` – `true` if all of `methods` can be executed, `false` otherwise.
+
+### Notes
+
+Learn more with the [Permission guide](/plugins/guides/permissions).
