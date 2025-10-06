@@ -29,126 +29,114 @@ export const LinkableField = ({ name, id, href, children }) => {
 
 Use the Navigation API to programmatically navigate the UI to a canvas node, a CMS collection item, or a code file. Plugins can optionally select targets, zoom to canvas layers, or focus a specific field in the item editor.
 
-<ParamField path="navigateTo()">
+<ParamField body="navigateTo()">
   Navigate the Framer UI to a target by its ID
 
   ```javascript
   await framer.navigateTo(nodeId, opts)
   ```
 
-  <Accordion title="Parameters">
+  <Expandable title="parameters">
     - `nodeId: string` – Unique identifier of the item to navigate to. This needs to be the node ID.
     - `opts?: NavigableOptions | undefined` – Options like `zoomIntoView` and `select`
-  </Accordion>
-  <Accordion title="Returns">
+  </Expandable>
+  <Expandable title="returns">
     `Promise<void>` – that resolves after the navigation request is handled. When it `nodeId` isn't in the current mode (e.g., the plugin is open on the canvas and the target is a collection item), it might terminate or restart the plugin in the new mode.
-  </Accordion>
-  <Accordion title="See Also">
+  </Expandable>
+  <Expandable title="related">
     - `node.navigateTo(opts)` – navigate to a specific canvas node
     - `collectionItem.navigateTo(opts)` – navigate to a collection item
     - `codeFile.navigateTo(opts)` – open a Code File in the editor
-  </Accordion>
+  </Expandable>
 </ParamField>
 
 ## Plugin UI
 
 A set of functions for opening and closing the Plugin itself, along with options setting a specific size for your Plugin. Plugins are able to run completely UI-less if desired.
 
-<ResponseField name="response" type="string">
+<ParamField body="closePlugin()">
   Close and terminate the plugin.
 
-  <Accordion title="Details">
-    ```javascript
-    await framer.closePlugin("Synchronization successful", {
-        variant: "success",
-    })
-    ```
+  ```javascript
+  await framer.closePlugin("Synchronization successful", {
+      variant: "success",
+  })
+  ```
 
-    ### Parameters
+  <Expandable title="parameters">
+    <ParamField path="message" type="string">
+      An optional message to show in the toast that will be shown.
+    </ParamField>
+    <ParamField path="options" type="ClosePluginOptions">
+      `variant?: NotificationVariant` — What variant of toast to show.
+    </ParamField>
+  </Expandable>
+  <Expandable title="returns">
+    `Promise<void>`
+  </Expandable>
+</ParamField>
 
-    - `message?: string` — An optional message to show in the toast that will be shown.
-    - `options?: ClosePluginOptions`
-      - `variant?: NotificationVariant` — What variant of toast to show.
+<ParamField path="hideUI()">
+  Hide the plugin window.
+</ParamField>
 
-    ### Returns
+<ParamField path="setMenu()">
+  Register a global plugin menu.
+</ParamField>
 
-    - `Promise<void>`
-  </Accordion>
-</ResponseField>
+<ParamField path="showContextMenu()">
+  Show a context menu at a given location.
+</ParamField>
 
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
+<ParamField path="showUI()">
+  Show the plugin window.
+</ParamField>
 
 ## User APIs
 
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
+<ParamField path="getCurrentUser()">
+  Information about the user that's interacting with the plugin.
+</ParamField>
 
 ### User
 
 A Framer user.
 
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
+<ParamField path="apiVersion1Id" deprecated>
+  Deprecated, use id.
+</ParamField>
+<ParamField path="avatarURL">
+  Full URL of user's profile picture, if they have one.
+</ParamField>
+<ParamField path="id">
+  User's ID, represented as a 64-lowercase-character hexadecimal string.
+</ParamField>
+<ParamField path="initials">
+  2-uppercase-character acronym of user's name, for when there is no avatar.
+</ParamField>
+<ParamField path="name">
+  User's full name.
+</ParamField>
 
 ## Code File API
 
 The CodeFile API allows plugins to create, read, update, and manage code files within a Framer project. A code file exports either [overrides](/overrides/examples) or [code components](/components/introduction).
 
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
-
-<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
-  Find out if user's permissions allow them to execute methods.
-</LinkableField>
+<ParamField path="createCodeFile()">
+  Create a new code file in the project.
+</ParamField>
+<ParamField path="getCodeFile()">
+  Get a specific code file by its ID.
+</ParamField>
+<ParamField path="getCodeFiles()">
+  Get all code files in the project.
+</ParamField>
+<ParamField path="subscribeToCodeFiles()">
+  Subscribe to changes in code files across the project.
+</ParamField>
+<ParamField path="subscribeToOpenCodeFile()">
+  Subscribe to changes in the Code Editor’s active file.
+</ParamField>
 
 ### CodeFile
 
