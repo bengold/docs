@@ -29,53 +29,859 @@ export const LinkableField = ({ name, id, href, children }) => {
 
 Use the Navigation API to programmatically navigate the UI to a canvas node, a CMS collection item, or a code file. Plugins can optionally select targets, zoom to canvas layers, or focus a specific field in the item editor.
 
+<ParamField path="navigateTo()">
+  Navigate the Framer UI to a target by its ID
+
+  <Accordion title="Example">
+    ```javascript
+    await framer.navigateTo(nodeId, opts)
+    ```
+  </Accordion>
+  <Accordion title="Parameters">
+    - `nodeId: string` – Unique identifier of the item to navigate to. This needs to be the node ID.
+    - `opts?: NavigableOptions | undefined` – Options like `zoomIntoView` and `select`
+  </Accordion>
+  <Accordion title="Returns">
+    - `Promise<void>` – that resolves after the navigation request is handled. When it `nodeId` isn't in the current mode (e.g., the plugin is open on the canvas and the target is a collection item), it might terminate or restart the plugin in the new mode.
+  </Accordion>
+  <Accordion title="See Also">
+    - `node.navigateTo(opts)` – navigate to a specific canvas node
+    - `collectionItem.navigateTo(opts)` – navigate to a collection item
+    - `codeFile.navigateTo(opts)` – open a Code File in the editor
+  </Accordion>
+</ParamField>
+
 ## Plugin UI
 
 A set of functions for opening and closing the Plugin itself, along with options setting a specific size for your Plugin. Plugins are able to run completely UI-less if desired.
 
+<ResponseField name="response" type="string">
+  Close and terminate the plugin.
+
+  <Accordion title="Details">
+    ```javascript
+    await framer.closePlugin("Synchronization successful", {
+        variant: "success",
+    })
+    ```
+
+    ### Parameters
+
+    - `message?: string` — An optional message to show in the toast that will be shown.
+    - `options?: ClosePluginOptions`
+      - `variant?: NotificationVariant` — What variant of toast to show.
+
+    ### Returns
+
+    - `Promise<void>`
+  </Accordion>
+</ResponseField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ## User APIs
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### User
 
+A Framer user.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ## Code File API
+
+The CodeFile API allows plugins to create, read, update, and manage code files within a Framer project. A code file exports either [overrides](/overrides/examples) or [code components](/components/introduction).
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### CodeFile
 
+A class representing a code file in a Framer project.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### CodeFileExport
+
+Union type representing exports from a code file.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### CodeFileVersion
 
+Represents a historical version of a code file.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ## Canvas APIs
+
+Framer provides APIs to interact with our Canvas. These APIs range from directly editing Nodes, to Images, and Drag & Drop. Learn more about Nodes in our [guide](/plugins/guides/nodes).
 
 ### Drag & Drop
 
+Allow any HTML element to become draggable.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### Traits
+
+Allow to get or edit node.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ## CMS APIs
 
+Framer provides APIs to interact with our CMS. Collections can be either user-created (`Unmanaged`) or controlled by a Plugin (`Managed`). The Collection types share similar API structures and Plugin authors can choose which Collection type works best for their use-case. Reference the latest APIs below or learn more with the [CMS guide](/plugins/guides/cms).
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### Collection
+
+A Collection that is not controlled by a Plugin.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### CollectionItem
 
+A class for a CMS item in a Collection or ManagedCollection.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### EnumCase
+
+An Enum Case for an Enum Field.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### EnumField
 
+An enum field.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### ManagedCollection
+
+A CMS Collection that is controlled by a Plugin.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ## Localization API
 
+Framer provides APIs to interact with our Localization functionality. The key pieces of Localization in Framer are Locales, Localization Groups, and Localization Sources. Locales are a language paired with an optional region, like English or English (Canada). Localization groups are things like pages or CMS items that contain one or more Localization sources. Localization sources are the strings from your site, along with their localized values.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### Locale
+
+A Locale in your project.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### LocalizationGroup
 
+A group of Localization Sources.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### LocalizationSource
+
+A localizable string on your site.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ### LocalizationValue
 
+The localized value and associated metadata for a Locale.
+
+<ParamField body="lastEdited" type="string">
+  The time the Localized Value was last edited at.
+</ParamField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ## Settings APIs
 
+Framer provides APIs to interact with our Site Settings functionality. Redirects, currently the primary feature supported by these APIs, allow you to permanently route traffic from an old path to a new URL.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
 ### Redirect
+
+A redirect from one path to another.
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<ParamField body="from" type="string">
+  The source path of the Redirect.
+</ParamField>
+
+<ParamField body="id" type="string">
+  A unique identifier for the Redirect.
+</ParamField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
+
+<LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
+  Find out if user's permissions allow them to execute methods.
+</LinkableField>
 
 ## Permissions
 
@@ -84,9 +890,11 @@ Plugins can do only what the user can. These APIs let you find out if the method
 <LinkableField name="isAllowedTo()" href="/reference/is-allowed-to">
   Find out if user's permissions allow them to execute methods.
 </LinkableField>
+
 <LinkableField name="subscribeToIsAllowedTo()" href="/reference/subscribe-to-is-allowed-to">
   Subscribe to changes in whether the user is allowed to execute methods.
 </LinkableField>
+
 <LinkableField name="useIsAllowedTo()" href="/reference/use-is-allowed-to">
   Find out if user's permissions allow them to execute methods, in hook form.
 </LinkableField>
