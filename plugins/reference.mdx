@@ -32,17 +32,16 @@ Use the Navigation API to programmatically navigate the UI to a canvas node, a C
 <ParamField path="navigateTo()">
   Navigate the Framer UI to a target by its ID
 
-  <Accordion title="Example">
-    ```javascript
-    await framer.navigateTo(nodeId, opts)
-    ```
-  </Accordion>
+  ```javascript
+  await framer.navigateTo(nodeId, opts)
+  ```
+
   <Accordion title="Parameters">
     - `nodeId: string` – Unique identifier of the item to navigate to. This needs to be the node ID.
     - `opts?: NavigableOptions | undefined` – Options like `zoomIntoView` and `select`
   </Accordion>
   <Accordion title="Returns">
-    - `Promise<void>` – that resolves after the navigation request is handled. When it `nodeId` isn't in the current mode (e.g., the plugin is open on the canvas and the target is a collection item), it might terminate or restart the plugin in the new mode.
+    `Promise<void>` – that resolves after the navigation request is handled. When it `nodeId` isn't in the current mode (e.g., the plugin is open on the canvas and the target is a collection item), it might terminate or restart the plugin in the new mode.
   </Accordion>
   <Accordion title="See Also">
     - `node.navigateTo(opts)` – navigate to a specific canvas node
